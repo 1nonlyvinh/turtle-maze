@@ -239,6 +239,8 @@ while w == 5:
           t.color(color[i % len(color)])
           t.left(500)
         break  # Exit the while loop after drawing the star
-    time.sleep(0.1)  # Add a small delay to prevent crashing
+    time.sleep(1)  # Add a small delay to prevent crashing
     
+	
+ 
 
