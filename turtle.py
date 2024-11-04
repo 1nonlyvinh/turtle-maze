@@ -230,6 +230,7 @@ t.setpos(-200, -200)
 
 color = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
 
+# goal when reaches coords
 w = 5
 while w == 5:
     if player.xcor() == -200 and player.ycor() == -200:
