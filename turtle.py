@@ -1,11 +1,10 @@
 import turtle
+import time
 
 t = turtle.Turtle()
-t.speed(10) 
+t.speed(0) 
 
-def draw_maze():
-  
-	t.penup()
+t.penup()
 t.penup()
 t.setpos(-200, 200)
 t.pendown()
@@ -227,22 +226,19 @@ screen.onkey(move_right, "Right")
 screen.mainloop()
 
 t.penup()
-t.setpos(0, 0)
+t.setpos(-200, -200)
 
-def reset_position():
-    player.setpos(-200, 180)
+color = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
 
-def check_collision():
-    if player.distance(t) < 20:  # Adjust the threshold as needed
-        reset_position()
-
-def move_up():
-    player.setheading(90)
-    player.forward(20)
-    check_collision()
-
-
-def check_level_completed():
-    if player.distance(cyan_square_x, cyan_square_y) < 20:  # Adjust the threshold as needed
-        player.write("Level Completed", align="center", font=("Arial", 16, "normal"))
+w = 5
+while w == 5:
+    if player.xcor() == -200 and player.ycor() == -200:
+        for i in range(5000):
+          t.pendown()
+          t.forward(i)
+          t.color(color[i % len(color)])
+          t.left(500)
+        break  # Exit the while loop after drawing the star
+    time.sleep(0.1)  # Add a small delay to prevent crashing
+    
 
